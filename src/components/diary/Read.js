@@ -70,12 +70,14 @@ const Read = ({ Data, login, postDelete }) => {
         return info;
       }
     }).map((list) => {
-      const url = `http://localhost:3001/img/${list.imageFile[0]}`;
+      const defaulturl =
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.huffingtonpost.kr%2F2017%2F04%2F19%2Fstory_n_16094274.html&psig=AOvVaw3Szv5L7uLiPYjr6cZCRXCB&ust=1591375134371000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLDqxsLM6OkCFQAAAAAdAAAAABAJ";
+      const url = `${process.env.REACT_APP_SERVER_ADDRESS}/img/${list.imageFile[0]}`;
       return (
         <>
           <BoxDiv key={list._id}>
             <ImageImg
-              src={url}
+              src={url ? url : defaulturl}
               alt="test"
               width="300"
               height="300"
@@ -92,7 +94,7 @@ const Read = ({ Data, login, postDelete }) => {
 
   const dataForm = Data ? (
     Data.map((list) => {
-      const url = `http://localhost:3001/img/${list.imageFile[0]}`;
+      const url = `${process.env.REACT_APP_SERVER_ADDRESS}/${list.imageFile[0]}`;
       return (
         <>
           <BoxDiv key={list._id}>
