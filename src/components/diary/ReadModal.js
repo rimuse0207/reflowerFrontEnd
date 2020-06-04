@@ -117,7 +117,7 @@ const ReadModal = ({
       <img
         key={list}
         height="100%"
-        src={`http://localhost:3001/img/${list}`}
+        src={`${process.env.REACT_APP_SERVER_ADDRESS}/img/${list}`}
       ></img>
     );
   });
