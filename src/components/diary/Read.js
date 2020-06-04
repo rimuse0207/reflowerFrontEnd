@@ -65,8 +65,6 @@ const Read = ({ Data, login, postDelete }) => {
       else if (
         Data.flowerName.toLowerCase().includes(search.flowerName.toLowerCase())
       ) {
-        console.log(typeof info.flowerName);
-        console.log(typeof search);
         return info;
       }
     }).map((list) => {
@@ -77,7 +75,7 @@ const Read = ({ Data, login, postDelete }) => {
         <>
           <BoxDiv key={list._id}>
             <ImageImg
-              src={url ? url : defaulturl}
+              src={list.imageFile[0] ? url : defaulturl}
               alt="test"
               width="300"
               height="300"
