@@ -130,10 +130,9 @@ const ReadModal = ({
 
   useEffect(() => {
     initialForm();
-    console.log("asdasd");
+
     getComment(data._id);
     return () => {
-      console.log("2222222222");
       getComment(data._id);
     };
   }, [postComment]);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import FlowerDataDetatilContainer from "../containers/FlowerDataDetatilContainer";
+
 import ModalDetail from "./ModalDetail";
 const PhotoBox = styled.div`
   width: 350px;
@@ -117,7 +117,7 @@ const FlowerDatas = ({ data }) => {
   ) : (
     <div>asdasd</div>
   );
-  console.log(data);
+
   const searchData = data ? (
     data.data
       .filter((info) => {
