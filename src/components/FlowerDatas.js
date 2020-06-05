@@ -120,35 +120,35 @@ const FlowerDatas = ({ data }) => {
     <div>asdasd</div>
   );
   console.log(data);
-  // const searchData = data ? (
-  //   data.data
-  //     .filter((info) => {
-  //       if (search == null) return data;
-  //       else if (info.cntntsSj.toLowerCase().includes(search.toLowerCase())) {
-  //         return data;
-  //       }
-  //     })
-  //     .map((list) => {
-  //       const cut = list.rtnStreFileNm.split("|");
-  //       const imgUrl = `http://www.nongsaro.go.kr/cms_contents/301/${cut[0]}`;
-  //       const backUrl = `http://www.nongsaro.go.kr/cms_contents/301/${cut[1]}`;
-  //       return (
-  //         <ShowCss key={list.cntntsNo}>
-  //           <DataLi
-  //             key={list.cntntsNo}
-  //             onClick={() =>
-  //               handleDetail(list.cntntsNo, backUrl, list.cntntsSj)
-  //             }
-  //           >
-  //             <img src={imgUrl} width="230" height="230" alt={list.cntntsSj} />
-  //             <DataTitle key={list.cntntsNo}>{list.cntntsSj}</DataTitle>
-  //           </DataLi>
-  //         </ShowCss>
-  //       );
-  //     })
-  // ) : (
-  //   <div>....Loading</div>
-  // );
+  const searchData = data ? (
+    data.data
+      .filter((info) => {
+        if (search == null) return data;
+        else if (info.cntntsSj.toLowerCase().includes(search.toLowerCase())) {
+          return data;
+        }
+      })
+      .map((list) => {
+        const cut = list.rtnStreFileNm.split("|");
+        const imgUrl = `http://www.nongsaro.go.kr/cms_contents/301/${cut[0]}`;
+        const backUrl = `http://www.nongsaro.go.kr/cms_contents/301/${cut[1]}`;
+        return (
+          <ShowCss key={list.cntntsNo}>
+            <DataLi
+              key={list.cntntsNo}
+              onClick={() =>
+                handleDetail(list.cntntsNo, backUrl, list.cntntsSj)
+              }
+            >
+              <img src={imgUrl} width="230" height="230" alt={list.cntntsSj} />
+              <DataTitle key={list.cntntsNo}>{list.cntntsSj}</DataTitle>
+            </DataLi>
+          </ShowCss>
+        );
+      })
+  ) : (
+    <div>....Loading</div>
+  );
 
   return (
     <PhotoBox>
@@ -158,7 +158,7 @@ const FlowerDatas = ({ data }) => {
         onChange={handleChange}
         placeholder="🔍Search ..."
       ></SearchInput>
-      <DataUl>asd</DataUl>
+      <DataUl>{searchData}</DataUl>
       {showDetail}
     </PhotoBox>
   );
