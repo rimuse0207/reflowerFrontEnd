@@ -93,6 +93,8 @@ const FlowerDatas = ({ data }) => {
   const [backUrl, setBackUrl] = useState("");
   const [name, setName] = useState("");
 
+  console.log(data);
+
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
@@ -117,7 +119,7 @@ const FlowerDatas = ({ data }) => {
   ) : (
     <div>asdasd</div>
   );
-
+  console.log(data);
   const searchData = data ? (
     data.data
       .filter((info) => {
@@ -156,7 +158,7 @@ const FlowerDatas = ({ data }) => {
         onChange={handleChange}
         placeholder="🔍Search ..."
       ></SearchInput>
-      <DataUl>{searchData}</DataUl>
+      <DataUl>asd</DataUl>
       {showDetail}
     </PhotoBox>
   );
