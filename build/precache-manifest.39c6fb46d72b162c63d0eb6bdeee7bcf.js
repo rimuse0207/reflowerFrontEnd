@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b24e38bac41b3c28e0b00a0715f7ac98",
+    "revision": "2771b3ad9ae73b8652bd210f973e7261",
     "url": "/reflowerFrontEnd/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reflowerFrontEnd/static/css/2.ecffae5e.chunk.css"
   },
   {
-    "revision": "8f4787ff7f8ed54acd4e",
+    "revision": "ed793f5c688700a7e834",
     "url": "/reflowerFrontEnd/static/css/main.cccadd02.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reflowerFrontEnd/static/js/2.fc15413d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8f4787ff7f8ed54acd4e",
-    "url": "/reflowerFrontEnd/static/js/main.35473898.chunk.js"
+    "revision": "ed793f5c688700a7e834",
+    "url": "/reflowerFrontEnd/static/js/main.38c784fa.chunk.js"
   },
   {
     "revision": "c7e0743d476bc4270280",
