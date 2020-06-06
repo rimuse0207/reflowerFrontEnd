@@ -44,7 +44,7 @@ const Box = styled.div`
 `;
 
 function App({ loginSuccess, login, initialForm }) {
-  const [clickOn, setClickOn] = useState(true);
+  const [clickOn, setClickOn] = useState(false);
 
   const handleLogOut = () => {
     localStorage.setItem("useredName", false);
@@ -53,7 +53,7 @@ function App({ loginSuccess, login, initialForm }) {
   };
 
   const handleClick = () => {
-    setClickOn(true);
+    setClickOn(false);
   };
 
   useEffect(() => {}, [loginSuccess]);
