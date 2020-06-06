@@ -6,10 +6,6 @@ import FlowerDatas from "../components/FlowerDatas";
 const FlowerDatasContainer = ({ getData, flowerdata }) => {
   useEffect(() => {
     getData();
-  });
-
-  useEffect(() => {
-    getData();
   }, [getData]);
 
   return <FlowerDatas data={flowerdata} getData={getData}></FlowerDatas>;
