@@ -103,7 +103,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://rimuse0207.github.io/reflowerFrontEnd",
   "devDependencies": {
     "gh-pages": "^3.0.0"
   },
@@ -160,5 +159,6 @@
       "react-app"
     ]
   },
-  "proxy": "http://18.224.37.144:3001"
+  "homepage": "http://3.135.210.82/",
+  "proxy": "http://3.135.210.82/"
 }
