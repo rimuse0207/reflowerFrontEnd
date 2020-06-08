@@ -53,7 +53,7 @@ function App({ loginSuccess, login, initialForm }) {
   };
 
   const handleClick = () => {
-    setClickOn(false);
+    setClickOn(true);
   };
 
   useEffect(() => {}, [loginSuccess]);
