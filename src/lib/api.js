@@ -1,11 +1,13 @@
 import axios from "axios";
 
 export const getData = () =>
-  // axios.get(`${process.env.REACT_APP_SERVER_ADDRESS}/users`);
-  axios.get(`http://18.224.37.144:3001/users`);
+  axios.get(`${process.env.REACT_APP_SERVER_ADDRESS}/users`);
+//axios.get(`http://18.224.37.144:3001/users`);
 
 export const getFlowerload = () =>
-  axios.get(`${process.env.REACT_APP_FLOWERLOAD}/json/MgisSpringStreet/1/180/`);
+  axios.get(
+    "http://openapi.seoul.go.kr:8088/6a674b6673786b713130376f52704348/json/MgisSpringStreet/1/5/"
+  );
 
 export const sendFlowerDataDetail = (number) =>
   axios.post(`${process.env.REACT_APP_SERVER_ADDRESS}/users/qwe`, {
@@ -46,8 +48,8 @@ export const postDiary = (form, file, name, date, flowername, title, desc) => {
 };
 
 export const getDiary = () =>
-  // axios.get(`${process.env.REACT_APP_SERVER_ADDRESS}/diary/readDiary`);
-  axios.get(`http://18.224.37.144:3001/diary/readDiary`);
+  axios.get(`${process.env.REACT_APP_SERVER_ADDRESS}/diary/readDiary`);
+//axios.get(`http://18.224.37.144:3001/diary/readDiary`);
 
 export const postDelete = (id) =>
   axios.post(`${process.env.REACT_APP_SERVER_ADDRESS}/diary/delete`, {

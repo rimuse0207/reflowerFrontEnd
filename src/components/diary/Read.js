@@ -21,7 +21,7 @@ const SearchInput = styled.input`
   padding-left: 10px;
 `;
 
-const Read = ({ Data, login, postDelete }) => {
+const Read = ({ diaryData, login, postDelete }) => {
   const [show, setShow] = useState(false);
   const [datas, setDatas] = useState("");
   const [search, setSearch] = useState("");
@@ -58,59 +58,42 @@ const Read = ({ Data, login, postDelete }) => {
       window.location.reload();
     }
   };
-
-  const dataForm2 = Data ? (
-    Data.filter((info) => {
-      if (search === "") return info;
-      else if (
-        Data.flowerName.toLowerCase().includes(search.flowerName.toLowerCase())
-      ) {
-        return info;
-      }
-    }).map((list) => {
-      const defaulturl =
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.huffingtonpost.kr%2F2017%2F04%2F19%2Fstory_n_16094274.html&psig=AOvVaw3Szv5L7uLiPYjr6cZCRXCB&ust=1591375134371000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLDqxsLM6OkCFQAAAAAdAAAAABAJ";
-      const url = `${process.env.REACT_APP_SERVER_ADDRESS}/img/${list.imageFile[0]}`;
-      return (
-        <>
-          <BoxDiv key={list._id}>
-            <ImageImg
-              src={list.imageFile[0] ? url : defaulturl}
-              alt="test"
-              width="300"
-              height="300"
-              onClick={() => handleClick(list)}
-              key={list._id}
-            ></ImageImg>
-          </BoxDiv>
-        </>
-      );
-    })
+  console.log(diaryData);
+  const dataForm2 = diaryData ? (
+    diaryData
+      .filter((info) => {
+        if (search === "") return info;
+        else if (
+          diaryData.flowerName
+            .toLowerCase()
+            .includes(search.flowerName.toLowerCase())
+        ) {
+          return info;
+        }
+      })
+      .map((list) => {
+        const defaulturl =
+          "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.huffingtonpost.kr%2F2017%2F04%2F19%2Fstory_n_16094274.html&psig=AOvVaw3Szv5L7uLiPYjr6cZCRXCB&ust=1591375134371000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLDqxsLM6OkCFQAAAAAdAAAAABAJ";
+        const url = `${process.env.REACT_APP_SERVER_ADDRESS}/img/${list.imageFile[0]}`;
+        return (
+          <>
+            <BoxDiv key={list._id}>
+              <ImageImg
+                src={list.imageFile[0] ? url : defaulturl}
+                alt="test"
+                width="300"
+                height="300"
+                onClick={() => handleClick(list)}
+                key={list._id}
+              ></ImageImg>
+            </BoxDiv>
+          </>
+        );
+      })
   ) : (
     <></>
   );
 
-  const dataForm = Data ? (
-    Data.map((list) => {
-      const url = `${process.env.REACT_APP_SERVER_ADDRESS}/${list.imageFile[0]}`;
-      return (
-        <>
-          <BoxDiv key={list._id}>
-            <ImageImg
-              src={url}
-              alt="test"
-              width="300"
-              height="300"
-              onClick={() => handleClick(list)}
-              key={list._id}
-            ></ImageImg>
-          </BoxDiv>
-        </>
-      );
-    })
-  ) : (
-    <div>...loading.....</div>
-  );
   return (
     <div style={{ width: "100%", marginLeft: "4%" }}>
       <SearchInput
