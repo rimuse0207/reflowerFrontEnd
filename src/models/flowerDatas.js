@@ -9,10 +9,10 @@ export const getData = () => async (dispatch) => {
   dispatch({ type: GET_DATA });
   try {
     const response = await api.getData();
-
+    console.log(response.data);
     dispatch({
       type: GET_DATA_SUCCESS,
-      playload: response,
+      playload: response.data,
     });
   } catch (e) {
     dispatch({ type: GET_DATA_FAILS, playload: e, error: true });
