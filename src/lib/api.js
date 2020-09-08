@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getData = () =>
-  axios.get(`${process.env.REACT_APP_SERVER_ADDRESS}/users`);
+  axios.get(`http://${process.env.REACT_APP_SERVER_ADDRESS}/users`);
 //axios.get(`http://18.224.37.144:3001/users`);
 
 export const getFlowerload = () =>

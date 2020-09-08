@@ -8,8 +8,9 @@ const GET_DATA_FAILS = "FlowerDatas/GET_DATA_FAILS";
 export const getData = () => async (dispatch) => {
   dispatch({ type: GET_DATA });
   try {
+    console.log("asdasd");
     const response = await api.getData();
-
+    console.log(response);
     dispatch({
       type: GET_DATA_SUCCESS,
       playload: response.data,
