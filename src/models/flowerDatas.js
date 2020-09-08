@@ -9,11 +9,7 @@ export const getData = () => async (dispatch) => {
   dispatch({ type: GET_DATA });
   try {
     const response = await api.getData();
-<<<<<<< HEAD
-    console.log(response.data);
-=======
-    console.log("12iufjsaidohfiuhsadi");
->>>>>>> 2ff11c8e1d6f5c190ea74f94723a6ac0ec433194
+
     dispatch({
       type: GET_DATA_SUCCESS,
       playload: response.data,

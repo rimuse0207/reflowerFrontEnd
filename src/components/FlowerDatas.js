@@ -121,7 +121,7 @@ const FlowerDatas = ({ data }) => {
   );
   console.log(data);
   const searchData = data ? (
-    data.data.data
+    data.data
       .filter((info) => {
         if (search == null) return data;
         else if (info.cntntsSj.toLowerCase().includes(search.toLowerCase())) {
