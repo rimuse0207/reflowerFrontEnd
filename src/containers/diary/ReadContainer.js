@@ -8,7 +8,9 @@ const ReadContainer = ({ diaryData, getDiary, login, postDelete }) => {
     getDiary();
   }, [getDiary]);
 
-  return <Read Data={diaryData} login={login} postDelete={postDelete}></Read>;
+  return (
+    <Read diaryData={diaryData} login={login} postDelete={postDelete}></Read>
+  );
 };
 export default connect(
   (state) => ({

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import FlowerDataDetatilContainer from "../containers/FlowerDataDetatilContainer";
+
 import ModalDetail from "./ModalDetail";
 const PhotoBox = styled.div`
   width: 350px;
@@ -93,6 +93,8 @@ const FlowerDatas = ({ data }) => {
   const [backUrl, setBackUrl] = useState("");
   const [name, setName] = useState("");
 
+  console.log(data);
+
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
@@ -119,7 +121,7 @@ const FlowerDatas = ({ data }) => {
   );
   console.log(data);
   const searchData = data ? (
-    data.data
+    data.data.data
       .filter((info) => {
         if (search == null) return data;
         else if (info.cntntsSj.toLowerCase().includes(search.toLowerCase())) {

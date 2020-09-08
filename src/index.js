@@ -6,7 +6,7 @@ import App from "./App";
 import rootReducer from "./models/index";
 import { composeWithDevTools } from "redux-devtools-extension";
 import ReduxThunk from "redux-thunk";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
@@ -19,14 +19,14 @@ const store = createStore(
 const persistor = persistStore(store);
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <React.StrictMode>
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <React.StrictMode>
+        <Router>
           <App />
-        </React.StrictMode>
-      </PersistGate>
-    </Provider>
-  </BrowserRouter>,
+        </Router>
+      </React.StrictMode>
+    </PersistGate>
+  </Provider>,
   document.getElementById("root")
 );
