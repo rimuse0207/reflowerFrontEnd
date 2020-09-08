@@ -54,7 +54,9 @@ const Navgation = () => {
             꽃길 찾기
           </Link>
         </NavLi>
-        <NavLi>도움말</NavLi>
+        <NavLi onClick={() => window.open("https://www.naver.com")}>
+          도움말
+        </NavLi>
         <NavLi>만든이</NavLi>
       </NavUL>
     </Nav>
